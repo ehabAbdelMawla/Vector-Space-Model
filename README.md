@@ -1,1 +1,1 @@
-# IR_Project
+# Vector Space Model
