@@ -72,7 +72,7 @@ psycopg2-binary==2.8.6
 py==1.9.0
 pycairo==1.16.2
 pycodestyle==2.6.0
-pycryptodome==3.3.1
+pycryptodome==3.6.6
 pycups==1.9.73
 pyfiglet==0.8.post1
 PyGObject==3.36.0
