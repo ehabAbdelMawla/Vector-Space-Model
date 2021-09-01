@@ -1,5 +1,4 @@
 alembic==1.5.4
-apturl==0.5.2
 argcomplete==1.8.1
 astroid==2.4.2
 attrs==20.2.0
