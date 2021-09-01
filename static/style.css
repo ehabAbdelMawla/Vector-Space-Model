@@ -1,0 +1,372 @@
+ * {
+     padding: 0;
+     margin: 0;
+ }
+ 
+ html {
+     scroll-behavior: smooth;
+ }
+ 
+ body {
+     display: flex;
+     /* background-image: url('https://images.wallpaperscraft.com/image/space_planet_light_night_sky_94442_1280x720.jpg'); */
+     background-image: url('space_planet_light_galaxy_94490_1280x720.jpg');
+     /* background-image: url('https://images.wallpaperscraft.com/image/space_planet_astronomy_133670_1280x720.jpg'); */
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: cover;
+     background-attachment: fixed;
+     align-items: center;
+     flex-direction: column;
+     flex-wrap: wrap;
+     overflow-x: hidden;
+     perspective: 100px;
+     min-height: 100vh;
+     padding-bottom: 15px;
+ }
+ 
+ h1 {
+     margin-top: 100px;
+     font-size: 78px;
+     font-family: Tahoma, Arial, monospace;
+     /* color: #000000b5 */
+     color: rgba(255, 255, 255, 0.74)
+ }
+ 
+ h1 span {
+     /* transition: all ease-in-out 0.5s; */
+     display: inline-block;
+     animation-name: moveAndRotate;
+     animation-duration: 2s;
+     animation-fill-mode: both;
+     animation-iteration-count: infinite;
+     animation-direction: alternate;
+ }
+ 
+ h1 span img {
+     max-width: 100px;
+     animation-name: Rotate;
+     animation-duration: 4s;
+     animation-fill-mode: both;
+     animation-iteration-count: infinite;
+     animation-direction: alternate;
+     position: relative;
+     top: 30px;
+     margin: 10px;
+ }
+ 
+ @keyframes Rotate {
+     from {
+         transform: rotateZ(360deg);
+     }
+     to {
+         transform: rotateZ(180deg);
+     }
+ }
+ 
+ @keyframes moveAndRotate {
+     from {
+         transform: translateY(-80px);
+         opacity: 0.5;
+     }
+     to {
+         transform: translateY(-20px);
+         opacity: 1;
+     }
+ }
+ 
+ form {
+     text-align: center;
+     /* background: chartreuse; */
+     /* border: 2px solid red; */
+     width: 70%;
+     max-width: 800px;
+     min-width: 480px;
+     overflow: hidden;
+     padding: 5px;
+ }
+ 
+ form .form-control input[type="text"] {
+     width: 90%;
+     border-radius: 25px;
+     margin: 25px auto 10px;
+     padding: 15px 25px;
+     border: none;
+     outline: none;
+     font-size: 22px;
+     transition: all ease-in-out 0.8s;
+     opacity: 0.7;
+ }
+ 
+ form .form-control input[type="text"]:focus {
+     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.678), -5px -5px 8px rgba(0, 0, 0, 0.678), 5px -5px 8px rgba(0, 0, 0, 0.678), -5px 5px 8px rgba(0, 0, 0, 0.678);
+     opacity: 1;
+ }
+ 
+ form .form-control input[type="submit"] {
+     padding: 15px 25px;
+     margin: 20px;
+     font-size: 30px;
+     font-weight: bold;
+     border-radius: 30px;
+     border: none;
+     background: transparent;
+     color: rgba(255, 255, 255, 0.658);
+     cursor: pointer;
+     transition: all ease-in-out 0.35s;
+     outline: none;
+     background: rgba(0, 0, 0, 0.275);
+ }
+ 
+ form .form-control input[type="submit"]:hover {
+     /* box-shadow: 5px 5px 10px linear-gradient(90deg, #414345, #232526); */
+     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.514), -2px -2px 2px rgba(0, 0, 0, 0.514);
+     transform: scale(1.2) rotate(-2.5deg);
+     color: rgb(255, 255, 255);
+ }
+ 
+ form .form-control input[value="Create Random Text"]:hover {
+     transform: scale(1.2) rotate(2.5deg);
+ }
+ 
+ .form-control:first-of-type {
+     position: relative;
+ }
+ 
+ .form-control:first-of-type img {
+     max-width: 35px;
+     position: absolute;
+     right: 35px;
+     top: 35px;
+     cursor: pointer;
+ }
+ 
+ .QueryValid {
+     text-align: center;
+ }
+ 
+ .QueryValid h2 {
+     margin: 20px;
+     font-size: 45px;
+     color: rgba(255, 255, 255, 0.699);
+     opacity: 0.6;
+     transition: all ease-in-out 0.5s;
+ }
+ 
+ .QueryValid h2:hover {
+     opacity: 1;
+     transform: scale(1.2) rotate(-2.5deg);
+ }
+ 
+ .errorTit {
+     color: red;
+     opacity: 0.8;
+     font-size: 30px;
+     letter-spacing: 2px;
+     text-decoration: underline;
+ }
+ 
+ .Result {
+     width: 80%;
+     min-width: 500px;
+     padding: 20px;
+     text-align: center;
+     opacity: 0;
+     animation-name: sh;
+     animation-iteration-count: 1;
+     animation-duration: 0.8s;
+     animation-delay: 1s;
+     animation-fill-mode: both;
+ }
+ 
+ @keyframes sh {
+     0% {
+         opacity: 0;
+         transform: translateZ(-100px) rotate(360deg);
+     }
+     100% {
+         opacity: 1;
+         transform: translateZ(0px) rotate(0deg);
+     }
+ }
+ 
+ .Result h3,
+ .Result h4 {
+     font-weight: bold;
+     font-size: 35px;
+     color: white;
+     opacity: 0.7;
+     transition: all ease-in-out 0.2s;
+     margin: 10px auto;
+     max-width: fit-content;
+ }
+ 
+ .Result h4 {
+     font-size: 60px;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ }
+ 
+ .Result h3:hover,
+ .Result h4:hover {
+     opacity: 1;
+     transform: scale(1.05);
+ }
+ 
+ .docContainet {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     margin: 2px auto;
+     justify-content: center;
+     align-items: center;
+     overflow: hidden;
+     padding: 30px 0;
+ }
+ 
+ .resultDoc {
+     /*border: 1px solid rgba(0, 0, 0, 0.541);*/
+     display: inline-block;
+     min-width: 450px;
+     margin: 25px;
+     padding: 10px 20px 20px;
+     font-size: 30px;
+     color: white;
+     transition: all ease-in-out 0.5s;
+     box-shadow: 1px 1px 30px black;
+ }
+ 
+ .resultDoc:hover {
+     box-shadow: 4px 4px 30px black;
+     transform: scale(1.06) rotate(5deg);
+ }
+ 
+ .resultDoc:nth-child(odd):hover {
+     transform: scale(1.06) rotate(-5deg);
+ }
+ 
+ .resultDoc .fileName,
+ .resultDoc .Score {
+     background: rgba(0, 0, 0, 0.493);
+     color: white;
+     width: fit-content;
+     margin: 8px auto;
+     padding: 15px;
+     border-radius: 50%;
+     transition: all ease-in-out 0.3s;
+     user-select: none;
+ }
+ 
+ .resultDoc .data {
+     margin: 20px 2px;
+     transition: all ease-in-out 0.5s;
+     opacity: 0.5;
+ }
+ 
+ .resultDoc:hover .data {
+     opacity: 1;
+     transform: scale(1.02);
+ }
+ 
+ .resultDoc .fileName:hover,
+ .resultDoc .Score:hover {
+     transform: rotate(360deg);
+     background: transparent;
+ }
+ 
+ @media (max-width:780px) {
+     h1:first-of-type {
+         margin-top: 70px!important;
+         font-size: 50px!important;
+     }
+     h1:first-of-type span img {
+         max-width: 65px!important;
+         margin: 3px!important;
+     }
+     .QueryValid h2:hover {
+         transform: scale(1.15) rotate(-2.5deg);
+     }
+ }
+ 
+ .ver2 {
+     border-radius: 50%;
+     overflow: hidden;
+     min-width: 100px;
+     margin: 25px;
+ }
+ 
+ .ver2:hover {
+     box-shadow: 4px 4px 30px black;
+     transform: scale(1.08) rotateZ(20deg);
+ }
+ 
+ .ver2:nth-child(odd):hover {
+     transform: scale(1.08) rotateZ(-20deg);
+ }
+ 
+ footer {
+     text-align: center;
+     color: White;
+     padding: 15px;
+     font-size: 40px;
+     display: block;
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     transition: all ease-in-out 0.5s;
+ }
+ 
+ footer span {
+     color: rgba(255, 0, 0, 0.541);
+     transition: inherit
+ }
+ 
+ footer:hover {
+     color: rgba(255, 0, 0, 0.541);
+ }
+ 
+ footer:hover span {
+     color: White;
+ }
+ 
+ .res2 .docContainet {
+     padding-bottom: 0;
+ }
+ 
+ .res2 {
+     overflow: hidden;
+     padding-bottom: 0;
+     margin: 15px;
+     margin-bottom: 25px;
+ }
+ /* form .form-control:nth-child(3) {
+     margin-bottom: 50px;
+ } */
+ 
+ @media (max-width:550px) {
+     .resultDoc {
+         min-width: 300px!important;
+         max-width: 300px!important;
+         margin: 25px 0;
+     }
+     .Result {
+         width: 100%;
+         padding: 20px 0
+     }
+     .res2 {
+         margin-bottom: 25px;
+     }
+     .ver2 {
+         min-width: 100px!important;
+         margin: 15px;
+     }
+     footer {
+         font-size: 30px;
+     }
+ }
+ 
+ #imgContaier {
+     width: 1000px;
+     text-align: center;
+ }

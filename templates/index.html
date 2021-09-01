@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="sortvut icon" href="../static/puesta-en-marcha.png">
+</head>
+
+<body>
+    <h1>{{title}}</h1>
+
+    <form method="POST" action="">
+        <div class="form-control"><input type="text" name="queryString" placeholder="Search Text....."><img src="../static/585e4ae1cb11b227491c3393.png" alt="Seacrh icon" id="SIcon"></div>
+        <div class="form-control"><input type="submit" name="BTN" value="search"></div>
+        <div class="form-control"><input type="submit" name="BTN" value="Create Random Text"></div>
+    </form>
+
+    {% if QueryValid==1 %}
+    <div class="QueryValid">
+        <p class="errorTit">Error!</p>
+        <h2> {{MSG}}</h2>
+    </div>
+    {% endif %} {% if display==1 %}
+    <div class="Result">
+        <h4> CosSim</h4>
+        <h3> {{"Query String: "+queryString}}</h3>
+
+        <article class="docContainet">
+            {% for res in result%}
+            <div class="resultDoc">
+                <p class="fileName">{{"D"+res}}</p>
+                <p class="data">{{data[res]}}</p>
+                <p class="Score">{{result[res]}}</p>
+            </div>
+            {% endfor %}
+        </article>
+    </div>
+
+    <div class="Result res2">
+        <h4> Authority</h4>
+
+        <article class="docContainet">
+            {% for doc in Authority%}
+            <div class="resultDoc ver2">
+                <p class="fileName">{{doc}}</p>
+                <p class="Score">{{Authority[doc]}}</p>
+            </div>
+            {% endfor %}
+        </article>
+    </div>
+    <div id="imgContaier"><img src="../static/graph1.png" alt="Graph image"></div>
+    {% endif %}
+    <footer>
+        Powerd By: <span>  Ehab Abdel Mawla</span>
+    </footer>
+    <script src="../static/V.js"></script>
+
+</body>
+
+</html>
