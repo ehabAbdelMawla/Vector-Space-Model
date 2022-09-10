@@ -6,12 +6,8 @@
 
 
 
-  <h2 align="center">TODO App</h2>
+  <h2 align="center">Vector Space Model</h2>
 
-  <p align="center">
-  Website Manage Your Tasks, Separate Tasks Into Different Branches, View And Update Task Properties And Show Progress For Your Work.
-   
-  </p>
 </div>
 
 
